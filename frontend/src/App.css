@@ -1,42 +1,371 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+/* General Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', 'Roboto', sans-serif;
+    background-color: #bfc4be;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+/* Layout Containers */
+.app-container {
+    min-height: 100vh;
+    padding: 24px;
+    box-sizing: border-box;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.main-card {
+    max-width: 1100px;
+    margin: 0 auto;
+    background: #d8e4d9;
+    border-radius: 8px;
+    box-shadow: 0 8px 30px rgba(20, 20, 50, 0.06);
+    padding: 24px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.title {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #2c3e50;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #21961d;
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 8px;
+}
+
+/* Buttons */
+button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    background-color: #264653;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.2s;
+}
+
+button:hover {
+    background-color: #2a9d8f;
+}
+
+.delete-btn {
+    background-color: #e76f51;
+    margin-left: 6px;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
+
+.add-btn {
+    margin-top: 8px;
+    width: 100%;
+}
+
+.refresh-btn {
+    background-color: #2a9d8f;
+}
+
+/* Banner */
+.banner-image {
+    width: 100%;
+    height: 140px;
+    background-color: #cad2c5;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner-placeholder {
+    color: #52796f;
+    font-weight: bold;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Home View */
+.home-view h2 {
+    color: #2c3e50;
+}
+
+.home-cards {
+    display: flex;
+    gap: 16px;
+    margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .card {
-  padding: 2em;
+    flex: 1;
+    padding: 20px;
+    border-radius: 8px;
+    min-width: 250px;
 }
 
-.read-the-docs {
-  color: #888;
+.management-card {
+    border: 1px solid #269c30;
+    background: #fbfeff;
+}
+
+.student-card {
+    border: 1px solid #366d36;
+    background: #fffbf2;
+}
+
+/* Management Layout */
+.management-layout {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.left-column {
+    flex: 1;
+    min-width: 300px;
+}
+
+.right-column {
+    flex: 1.2;
+    min-width: 300px;
+}
+
+.section {
+    margin-bottom: 24px;
+}
+
+.section h3 {
+    margin-top: 0;
+    color: #2c3e50;
+    border-bottom: 2px solid #a8d5a8;
+    padding-bottom: 8px;
+}
+
+/* Inputs */
+input,
+select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 6px;
+}
+
+.input-group {
+    display: flex;
+    gap: 8px;
+}
+
+.input-group input,
+.input-group select {
+    flex: 1;
+}
+
+.search-input {
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.full-width {
+    width: 100%;
+}
+
+/* Lists */
+.list-container {
+    max-height: 280px;
+    overflow-y: auto;
+    border: 1px solid #4e9f4e;
+    padding: 8px;
+    border-radius: 6px;
+    background: white;
+}
+
+.short-list {
+    max-height: 150px;
+    border-color: #42429c;
+}
+
+.list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.item-name {
+    font-weight: 600;
+    color: #333;
+}
+
+.item-sub {
+    font-size: 12px;
+    color: #666;
+}
+
+.simple-item {
+    padding: 4px 0;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.empty-msg {
+    color: #777;
+    font-style: italic;
+    text-align: center;
+    padding: 10px;
+}
+
+.mt-4 {
+    margin-top: 16px;
+}
+
+.ml-2 {
+    margin-left: 8px;
+}
+
+/* Attendance Section */
+.attendance-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.attendance-table-container {
+    max-height: 400px;
+    overflow-y: auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    background: white;
+}
+
+.attendance-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.attendance-table th {
+    text-align: left;
+    padding: 10px;
+    background: #f1f1f1;
+    position: sticky;
+    top: 0;
+}
+
+.attendance-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Status Colors */
+.bg-green {
+    background-color: #e8f9e8;
+}
+
+.bg-red {
+    background-color: #ffecec;
+}
+
+.bg-yellow {
+    background-color: #fff9db;
+}
+
+.bg-green-light {
+    background-color: #e8f9e8;
+    border-left: 4px solid #10ca2f;
+}
+
+.bg-red-light {
+    background-color: #ffecec;
+    border-left: 4px solid #9b2a2a;
+}
+
+.bg-yellow-light {
+    background-color: #fff9db;
+    border-left: 4px solid #eccc68;
+}
+
+/* Badge */
+.badge {
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+/* Login Panel */
+.login-panel {
+    max-width: 500px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Footer */
+.footer {
+    margin-top: 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 16px;
+    border-top: 1px solid #ccc;
+}
+
+.footer-text {
+    font-size: 13px;
+    color: #666;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .management-layout {
+        flex-direction: column;
+    }
+
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-buttons {
+        width: 100%;
+        justify-content: flex-start;
+        margin-top: 10px;
+    }
 }
